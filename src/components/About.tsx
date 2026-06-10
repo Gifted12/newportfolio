@@ -29,9 +29,9 @@ function CountUp({ target, suffix = "" }: { target: number; suffix?: string }) {
 }
 
 const stats = [
-  { value: , suffix: "+", label: "Projects Completed", icon: Code2, color: "cyan" },
-  { value: 20, suffix: "+", label: "Technologies Used", icon: Layers, color: "purple" },
-  { value: 4, suffix: "+", label: "Years of Experience", icon: Zap, color: "blue" },
+  { value: 16, suffix: "+", label: "Projects Completed", icon: Code2, color: "cyan" },
+  { value: 9, suffix: "+", label: "Technologies Used", icon: Layers, color: "purple" },
+  { value: 3, suffix: "+", label: "Years of Experience", icon: Zap, color: "blue" },
 ];
 
 export default function About() {
@@ -44,7 +44,7 @@ export default function About() {
 
       <div ref={ref} className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
-          {/* Left */}
+      
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -80,7 +80,7 @@ export default function About() {
             </div>
           </motion.div>
 
-          {/* Right: Stats */}
+          
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -118,7 +118,7 @@ export default function About() {
               </motion.div>
             ))}
 
-            {/* Mini decorative card */}
+         
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}

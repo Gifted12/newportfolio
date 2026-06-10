@@ -40,7 +40,7 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className={`fixed top-0 left-0 right-0 z-50 mb-6 p-2 width-full transition-all duration-500  ${
           scrolled
-            ? "py-3 glass  shadow-[0_1px_0_rgba(26,37,64,1)] backdrop-blur-sm"
+            ? "py-3 glass  shadow-[0_2px_0_rgba(26,37,64,2)] backdrop-blur-3xl"
             : "py-6 bg-transparent"
         }`}
       >
@@ -61,16 +61,16 @@ export default function Navbar() {
               <li key={link.label}>
                 <a
                   href={link.href}
-                  className={`relative text-l font-body font-medium  rounded-xl px-2 py-2  transition-all duration-200 ${
+                  className={`relative   text-l font-body font-medium   px-2 py-2  transition-all duration-200 ${
                     activeSection === link.href.slice(1)
-                      ? "text-accent-cyan"
-                      : "text-text-secondary hover:text-text-primary"
+                      ? "text-accent-cyan rounded-full btn-outline"
+                      : "text-text-secondary hover:text-text-primary "
                   }`}
                 >
                   {activeSection === link.href.slice(1) && (
                     <motion.span
                       layoutId="activeNav"
-                      className="absolute inset-0 bg-accent-cyan/8 rounded-lg border border-accent-cyan/20"
+                      className="absolute rounded-full btn-outline inset-0 bg-accent-cyan/8  "
                     />
                   )}
                   <span className="relative px-5 py-3 z-10">{link.label}</span> 
@@ -83,7 +83,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center px-4 gap-3">
             <a
               href="mailto:reno@developer.com"
-              className="outline-0 border border-zinc-300 px-5 py-2 rounded-xl text-sm"
+              className="btn-primary outline-0 px-5 py-2 rounded-full text-sm"
             >
               Hire Me
             </a>
@@ -119,7 +119,7 @@ export default function Navbar() {
                   <a
                     href={link.href}
                     onClick={() => setMenuOpen(false)}
-                    className={`block px-4 py-3 rounded-xl text-sm font-medium transition-all ${
+                    className={`block px-4 py-3 rounded-full text-sm font-medium transition-all ${
                       activeSection === link.href.slice(1)
                         ? "text-accent-cyan bg-accent-cyan/8 border border-accent-cyan/20"
                         : "text-text-secondary hover:text-text-primary hover:bg-bg-elevated"

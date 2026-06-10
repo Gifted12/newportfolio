@@ -1,8 +1,7 @@
 "use client";
 import { motion, type Variants } from "framer-motion";
-import { ArrowDown, Download } from "lucide-react";
 import Image from "next/image";
-import { FaGithub, FaLinkedin, FaXTwitter, FaDownload } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaXTwitter, FaArrowDown } from "react-icons/fa6";
 
 const stagger: Variants = {
   animate: { transition: { staggerChildren: 0.12 } },
@@ -77,7 +76,7 @@ export default function Hero() {
           <motion.div variants={fadeUp} className="flex flex-wrap gap-3 mb-10">
             <a href="#projects" className="btn-primary px-7 py-3.5 rounded-2xl text-sm inline-flex items-center gap-2">
               View Projects
-              <ArrowDown size={15} />
+              <FaArrowDown size={15} />
             </a>
             <a href="#contact" className="btn-outline px-7 py-3.5 rounded-2xl text-sm">
               Contact Me
@@ -86,7 +85,7 @@ export default function Hero() {
               href="#"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-2xl text-sm font-medium text-text-secondary glass border border-border hover:border-border-glow hover:text-text-primary transition-all duration-300"
             >
-              <FaDownload size={15} />
+              <FaArrowDown size={15} />
               Resume
             </a>
           </motion.div>
@@ -164,68 +163,7 @@ export default function Hero() {
              height={500}
              priority
              />
-              {/* <svg viewBox="0 0 200 200" className="w-full h-full" fill="none">
-                <defs>
-                  <radialGradient id="bgGrad" cx="50%" cy="50%">
-                    <stop offset="0%" stopColor="#0c1222" />
-                    <stop offset="100%" stopColor="#050810" />
-                  </radialGradient>
-                  <linearGradient id="skinGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#f5c98a" />
-                    <stop offset="100%" stopColor="#e8a96a" />
-                  </linearGradient>
-                  <linearGradient id="shirtGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#1a2540" />
-                    <stop offset="100%" stopColor="#0c1830" />
-                  </linearGradient>
-                </defs>
-                
-                <circle cx="100" cy="100" r="100" fill="url(#bgGrad)" />
-                
-                <g opacity="0.07">
-                  {[0,40,80,120,160,200].map(x => <line key={x} x1={x} y1="0" x2={x} y2="200" stroke="#00d4ff" strokeWidth="0.5" />)}
-                  {[0,40,80,120,160,200].map(y => <line key={y} x1="0" y1={y} x2="200" y2={y} stroke="#00d4ff" strokeWidth="0.5" />)}
-                </g>
-             
-                <ellipse cx="100" cy="170" rx="58" ry="38" fill="url(#shirtGrad)" />
-               
-                <path d="M82,142 L100,165 L118,142" stroke="#00d4ff" strokeWidth="1.5" fill="none" opacity="0.6" />
-                
-                <text x="100" y="178" textAnchor="middle" fill="#00d4ff" fontSize="8" fontFamily="JetBrains Mono, monospace" opacity="0.7">&lt;dev /&gt;</text>
-               
-                <rect x="92" y="125" width="16" height="22" rx="7" fill="url(#skinGrad)" />
-              
-                <ellipse cx="100" cy="100" rx="34" ry="38" fill="url(#skinGrad)" />
-                
-                <path d="M68,92 Q70,60 100,58 Q130,60 132,92 Q128,76 100,74 Q72,76 68,92Z" fill="#1a1008" />
-                
-                <path d="M68,92 Q65,110 68,118 Q66,105 68,92Z" fill="#1a1008" />
-                <path d="M132,92 Q135,110 132,118 Q134,105 132,92Z" fill="#1a1008" />
-                
-                <ellipse cx="88" cy="102" rx="5" ry="5.5" fill="#2d1b00" />
-                <ellipse cx="112" cy="102" rx="5" ry="5.5" fill="#2d1b00" />
-                
-                <circle cx="90" cy="100" r="1.5" fill="white" opacity="0.8" />
-                <circle cx="114" cy="100" r="1.5" fill="white" opacity="0.8" />
-                
-                <path d="M82,95 Q88,92 94,95" stroke="#4a2c00" strokeWidth="2" fill="none" strokeLinecap="round" />
-                <path d="M106,95 Q112,92 118,95" stroke="#4a2c00" strokeWidth="2" fill="none" strokeLinecap="round" />
-                
-                <path d="M91,116 Q100,123 109,116" stroke="#c07830" strokeWidth="2" fill="none" strokeLinecap="round" />
-                
-                <rect x="58" y="155" width="84" height="52" rx="5" fill="#0c1222" stroke="#1a2540" strokeWidth="1" />
-                <rect x="62" y="159" width="76" height="40" rx="3" fill="#050810" />
-                
-                <rect x="66" y="164" width="30" height="2" rx="1" fill="#00d4ff" opacity="0.8" />
-                <rect x="66" y="170" width="45" height="2" rx="1" fill="#8b5cf6" opacity="0.7" />
-                <rect x="66" y="176" width="20" height="2" rx="1" fill="#3b82f6" opacity="0.8" />
-                <rect x="66" y="182" width="38" height="2" rx="1" fill="#00d4ff" opacity="0.5" />
-                <rect x="66" y="188" width="25" height="2" rx="1" fill="#8b5cf6" opacity="0.6" />
-                
-                <rect x="99" y="182" width="1.5" height="7" rx="0.5" fill="#00d4ff">
-                  <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite" />
-                </rect>
-              </svg> */}
+
             </motion.div>
 
           
@@ -234,20 +172,7 @@ export default function Hero() {
         </motion.div>
       </div>
 
-     
-      {/* <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-      >
-        <span className="text-text-muted text-xs font-mono">scroll</span>
-        <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          className="w-px h-8 bg-gradient-to-b from-accent-cyan/60 to-transparent"
-        /> */}
-      {/* </motion.div> */}
+
     </section>
   );
 }

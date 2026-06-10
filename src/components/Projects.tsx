@@ -1,14 +1,13 @@
 "use client";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ExternalLink, GitBranch, Star } from "lucide-react";
+import { FaGithub} from "react-icons/fa6";
 
 const projects = [
   {
-    title: "NexCommerce",
-    description: "A full-stack e-commerce platform with real-time inventory management, Stripe payments, and an admin dashboard. Built for scale with SSR and optimistic UI.",
-    tech: ["Next.js", "TypeScript", "MongoDB", "Stripe", "Tailwind"],
-    stars: 128,
+    title: "ClipSync",
+    description: "A full-stack platform that help users pass datas from one device to the othee, built with an optimistic UI.",
+    tech: ["React", "MongoDB", "Google Auth", "Css"],
     category: "Full-Stack",
     color: "cyan",
     live: "#",
@@ -18,11 +17,10 @@ const projects = [
     mockupLines: ["#00d4ff", "#3b82f6", "#8b5cf6"],
   },
   {
-    title: "TaskFlow Pro",
-    description: "A collaborative project management tool with Kanban boards, real-time collaboration via WebSockets, and AI-powered task prioritization.",
-    tech: ["React", "Node.js", "PostgreSQL", "Socket.io", "Docker"],
-    stars: 89,
-    category: "SaaS",
+    title: "Event Tracker",
+    description: "An Event management tool used to track activities on a daily, weekly, and montly bases.",
+    tech: ["React", "FireBase", "Css"],
+    category: "Full-Stack",
     color: "purple",
     live: "#",
     github: "#",
@@ -31,11 +29,10 @@ const projects = [
     mockupLines: ["#8b5cf6", "#ec4899", "#6366f1"],
   },
   {
-    title: "DevMetrics API",
-    description: "A high-performance REST API for developer productivity metrics. Features JWT auth, rate limiting, Redis caching, and comprehensive OpenAPI docs.",
-    tech: ["Node.js", "Express", "PostgreSQL", "Redis", "Docker"],
-    stars: 203,
-    category: "Backend",
+    title: "Travel Agent",
+    description: "A travel agent site that torist or travelers can get insperation from to explore the world",
+    tech: ["Node.js", "Javascript", "nodemailer", "Css"],
+    category: "Fullstack",
     color: "blue",
     live: "#",
     github: "#",
@@ -44,10 +41,9 @@ const projects = [
     mockupLines: ["#3b82f6", "#00d4ff", "#22d3ee"],
   },
   {
-    title: "PortalUI",
-    description: "An open-source UI component library for React with 40+ accessible components, dark/light theming, and full TypeScript support.",
-    tech: ["React", "TypeScript", "Storybook", "Tailwind", "Vitest"],
-    stars: 341,
+    title: "Portfolio",
+    description: "my personal portfolio ",
+    tech: ["Next Js", "TypeScript", "Tailwind"],
     category: "Open Source",
     color: "orange",
     live: "#",
@@ -58,11 +54,11 @@ const projects = [
   },
 ];
 
-const colorConfig: Record<string, { badge: string; btn: string; border: string; star: string }> = {
-  cyan: { badge: "bg-accent-cyan/10 text-accent-cyan border-accent-cyan/20", btn: "text-accent-cyan hover:bg-accent-cyan/10", border: "hover:border-accent-cyan/40", star: "text-accent-cyan" },
-  purple: { badge: "bg-accent-purple/10 text-accent-purple border-accent-purple/20", btn: "text-accent-purple hover:bg-accent-purple/10", border: "hover:border-accent-purple/40", star: "text-accent-purple" },
-  blue: { badge: "bg-blue-500/10 text-blue-400 border-blue-500/20", btn: "text-blue-400 hover:bg-blue-500/10", border: "hover:border-blue-400/40", star: "text-blue-400" },
-  orange: { badge: "bg-orange-500/10 text-orange-400 border-orange-500/20", btn: "text-orange-400 hover:bg-orange-500/10", border: "hover:border-orange-400/40", star: "text-orange-400" },
+const colorConfig: Record<string, { badge: string; btn: string; border: string;  }> = {
+  cyan: { badge: "bg-accent-cyan/10 text-accent-cyan border-accent-cyan/20", btn: "text-accent-cyan hover:bg-accent-cyan/10", border: "hover:border-accent-cyan/40"},
+  purple: { badge: "bg-accent-purple/10 text-accent-purple border-accent-purple/20", btn: "text-accent-purple hover:bg-accent-purple/10", border: "hover:border-accent-purple/40" },
+  blue: { badge: "bg-blue-500/10 text-blue-400 border-blue-500/20", btn: "text-blue-400 hover:bg-blue-500/10", border: "hover:border-blue-400/40" },
+  orange: { badge: "bg-orange-500/10 text-orange-400 border-orange-500/20", btn: "text-orange-400 hover:bg-orange-500/10", border: "hover:border-orange-400/40" },
 };
 
 
@@ -142,12 +138,11 @@ export default function Projects() {
                 transition={{ duration: 0.55, delay: i * 0.1 }}
                 className={`glass card-shine border border-border ${c.border} rounded-2xl overflow-hidden group transition-all duration-300 hover:shadow-card-hover`}
               >
-                {/* Mockup */}
+               
                 <div className="p-5 pb-0">
                   <MockupScreen project={project} />
                 </div>
 
-                {/* Content */}
                 <div className="p-6">
                   <div className="flex items-start justify-between mb-3">
                     <div>
@@ -158,17 +153,13 @@ export default function Projects() {
                       </div>
                       <h3 className="font-display font-700 text-lg text-text-primary">{project.title}</h3>
                     </div>
-                    <div className={`flex items-center gap-1 text-xs font-mono ${c.star}`}>
-                      <Star size={11} fill="currentColor" />
-                      {project.stars}
-                    </div>
                   </div>
 
                   <p className="text-text-secondary text-sm leading-relaxed mb-5">
                     {project.description}
                   </p>
 
-                  {/* Tech tags */}
+                 
                   <div className="flex flex-wrap gap-2 mb-5">
                     {project.tech.map((t) => (
                       <span key={t} className="text-xs px-2.5 py-1 rounded-lg bg-bg-elevated border border-border text-text-muted font-mono">
@@ -177,20 +168,20 @@ export default function Projects() {
                     ))}
                   </div>
 
-                  {/* Actions */}
+                
                   <div className="flex items-center gap-3 pt-4 border-t border-border">
                     <a
                       href={project.live}
                       className={`inline-flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-xl transition-all duration-200 border border-transparent ${c.btn}`}
                     >
-                      <ExternalLink size={13} />
+                      {/* <FaExternalLink size={13} /> */}
                       Live Demo
                     </a>
                     <a
                       href={project.github}
                       className="inline-flex items-center gap-1.5 text-sm font-medium text-text-secondary hover:text-text-primary px-4 py-2 rounded-xl hover:bg-bg-elevated transition-all duration-200"
                     >
-                      <GitBranch size={13} />
+                      <FaGithub size={13} />
                       GitHub
                     </a>
                   </div>
@@ -212,7 +203,7 @@ export default function Projects() {
             rel="noopener noreferrer"
             className="btn-outline px-8 py-3.5 rounded-2xl text-sm inline-flex items-center gap-2"
           >
-            <GitBranch size={15} />
+            <FaGithub size={15} />
             View all on GitHub
           </a>
         </motion.div>

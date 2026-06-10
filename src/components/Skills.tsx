@@ -1,48 +1,54 @@
 "use client";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import {FaReact, FaNodeJs,FaGear, FaGitAlt,FaGithub, FaCode, FaServer, FaDatabase } from "react-icons/fa6";
+import {RiNextjsFill, RiTailwindCssFill, RiFirebaseLine} from "react-icons/ri";
+import {SiExpress, SiMongodb,SiPostgresql, SiVercel} from "react-icons/si";
+import {BsTypescript, BsJavascript} from "react-icons/bs";
+import { IconType } from "react-icons";
+import { FaTools } from "react-icons/fa";
 
 const categories = [
   {
     name: "Frontend",
     color: "cyan",
-    icon: "⚡",
+    icon: FaCode,
     skills: [
-      { name: "React", level: 95, icon: "⚛" },
-      { name: "Next.js", level: 92, icon: "▲" },
-      { name: "TypeScript", level: 90, icon: "TS" },
-      { name: "JavaScript", level: 96, icon: "JS" },
-      { name: "Tailwind CSS", level: 93, icon: "🎨" },
+      { name: "React", level: 70, icon: FaReact },
+      { name: "Next.js", level: 68, icon: RiNextjsFill },
+      { name: "TypeScript", level: 68, icon: BsTypescript },
+      { name: "JavaScript", level: 90, icon: BsJavascript },
+      { name: "Tailwind CSS", level: 80, icon: RiTailwindCssFill},
     ],
   },
   {
     name: "Backend",
     color: "purple",
-    icon: "🔧",
+    icon: FaServer,
     skills: [
-      { name: "Node.js", level: 88, icon: "🟢" },
-      { name: "Express.js", level: 85, icon: "🚂" },
-      { name: "REST APIs", level: 92, icon: "🔗" },
+      { name: "Node.js", level: 70, icon: FaNodeJs },
+      { name: "Express.js", level: 70, icon: SiExpress },
+      { name: "REST APIs", level: 83, icon: FaGear },
     ],
   },
   {
     name: "Database",
     color: "blue",
-    icon: "🗄",
+    icon: FaDatabase,
     skills: [
-      { name: "MongoDB", level: 85, icon: "🍃" },
-      { name: "PostgreSQL", level: 82, icon: "🐘" },
-      { name: "Firebase", level: 80, icon: "🔥" },
+      { name: "MongoDB", level: 85, icon: SiMongodb},
+      { name: "PostgreSQL", level: 82, icon: SiPostgresql },
+      { name: "Firebase", level: 80, icon: RiFirebaseLine },
     ],
   },
   {
     name: "Tools",
     color: "orange",
-    icon: "🛠",
+    icon: FaTools,
     skills: [
-      { name: "Git", level: 95, icon: "📝" },
-      { name: "GitHub", level: 94, icon: "🐙" },
-      { name: "Vercel", level: 90, icon: "▲" },
+      { name: "Git", level: 95, icon: FaGitAlt },
+      { name: "GitHub", level: 94, icon: FaGithub },
+      { name: "Vercel", level: 90, icon: SiVercel },
     ],
   },
 ];
@@ -78,7 +84,7 @@ const colorMap: Record<string, { bg: string; border: string; text: string; bar: 
   },
 };
 
-function SkillBar({ name, level, icon, color, delay }: { name: string; level: number; icon: string; color: string; delay: number }) {
+function SkillBar({ name, level, icon:Icon, color, delay }: { name: string; level: number; icon: IconType; color: string; delay: number }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
   const c = colorMap[color];
@@ -87,7 +93,7 @@ function SkillBar({ name, level, icon, color, delay }: { name: string; level: nu
     <div ref={ref} className="group">
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-2">
-          <span className="text-sm">{icon}</span>
+          <span className="text-sm"><Icon/></span>
           <span className="text-sm font-medium text-text-primary">{name}</span>
         </div>
         <span className={`text-xs font-mono font-medium ${c.text}`}>{level}%</span>
@@ -145,7 +151,7 @@ export default function Skills() {
                 
                 <div className="flex items-center gap-3 mb-7">
                   <div className={`w-10 h-10 rounded-xl ${c.bg} border ${c.border} flex items-center justify-center text-lg`}>
-                    {cat.icon}
+                    <cat.icon/>
                   </div>
                   <div>
                     <h3 className={`font-display font-600 text-base ${c.text}`}>{cat.name}</h3>
