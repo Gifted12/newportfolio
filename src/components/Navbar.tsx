@@ -86,7 +86,7 @@ export default function Navbar() {
          
           <div className="hidden md:flex items-center px-4 gap-3">
             <a
-              href="mailto:reno@developer.com"
+              href="mailto:josiahyisa4reals@gmail.com"
               className="btn-primary outline-0 px-5 py-2 rounded-full text-sm"
             >
               Hire Me
@@ -115,7 +115,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.25 }}
-            className="fixed top-4 left-4 right-4 z-40 bg-[#0c1222b8]  glass rounded-b-xl  p-6 md:hidden"
+            className="fixed top-4 left-4 right-4 z-40 bg-[#050810] rounded-b-xl  p-6  md:hidden"
           >
             <ul className="flex flex-col gap-1 pt-20">
               {navLinks.map((link) => (
@@ -125,7 +125,7 @@ export default function Navbar() {
                     onClick={() => setMenuOpen(false)}
                     className={`block px-4 py-3 rounded-full text-sm font-medium transition-all ${
                       activeSection === link.href.slice(1)
-                        ? "text-cyan-500 bg-cyan-500/8 border border-cyan-500/20"
+                        ? "text-cyan-500 bg-cyan-400/8 border border-cyan-400/20"
                         : "text-text-secondary hover:text-text-primary hover:bg-bg-elevated"
                     }`}
                   >
@@ -133,8 +133,8 @@ export default function Navbar() {
                   </a>
                 </li>
               ))}
-              <li className="pt-2 border-t border-border mt-2">
-                <a href="josiahyisa4reals@gmail.com" className="btn-outline block text-center px-4 py-3 rounded-xl text-sm">
+              <li className="pt-2 border-t  border-border mt-2">
+                <a href="mailto:josiahyisa4reals@gmail.com" className="btn-primary block text-center px-4 py-3 rounded-xl text-sm">
                   Hire Me
                 </a>
               </li>
