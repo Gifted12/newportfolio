@@ -10,7 +10,7 @@ const stats = [
   { label: "Followers", value: "230+", icon: Users, color: "orange" },
 ];
 
-// Pre-generated static grid — identical on server and client, no Math.random()
+
 const STATIC_GRID: number[][] = [
   [4,0,2,4,0,3,1],[0,3,1,0,4,1,0],[3,3,0,2,4,2,1],[0,4,1,0,0,4,1],
   [2,0,1,3,2,0,4],[4,0,0,4,3,1,1],[1,3,3,0,1,3,0],[2,1,4,0,2,4,3],
@@ -49,7 +49,7 @@ function ContributionGrid() {
   );
 }
 
-// Static monthly values — no random
+
 const MONTHLY_VALUES = [45, 72, 58, 88, 63, 95, 80, 70, 85, 78, 92, 88];
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const MAX_VALUE = Math.max(...MONTHLY_VALUES);
@@ -58,7 +58,7 @@ function ActivityChart() {
   const [animated, setAnimated] = useState(false);
 
   useEffect(() => {
-    // Trigger animation after mount so bars animate client-side only
+
     const t = setTimeout(() => setAnimated(true), 200);
     return () => clearTimeout(t);
   }, []);

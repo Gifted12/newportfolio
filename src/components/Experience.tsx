@@ -5,7 +5,7 @@ import { BookOpen, Code, Globe, Layers, Rocket, Target } from "lucide-react";
 
 const timeline = [
   {
-    year: "2020",
+    year: "2021",
     title: "Started Web Development",
     desc: "Began the journey with HTML, CSS, and vanilla JavaScript. Built static websites and learned the fundamentals of the web platform.",
     icon: BookOpen,
@@ -13,7 +13,7 @@ const timeline = [
     tags: ["HTML", "CSS", "JavaScript"],
   },
   {
-    year: "2021",
+    year: "2022",
     title: "Mastered JavaScript",
     desc: "Dove deep into JavaScript — async programming, DOM manipulation, ES6+, and modern patterns. Started exploring Node.js and backend basics.",
     icon: Code,
@@ -21,28 +21,28 @@ const timeline = [
     tags: ["ES6+", "Async/Await", "Node.js"],
   },
   {
-    year: "2022",
+    year: "2023",
     title: "Built React Applications",
     desc: "Fell in love with component-driven development. Shipped multiple React projects and adopted TypeScript for type-safe, maintainable code.",
     icon: Globe,
     color: "purple",
-    tags: ["React", "TypeScript", "Redux"],
+    tags: ["React", "TypeScript","TailWind"],
   },
   {
-    year: "2023",
+    year: "2024",
     title: "Full-Stack Development",
     desc: "Expanded into backend architecture — designing REST APIs, working with databases, and deploying containerized applications with Docker.",
     icon: Layers,
     color: "cyan",
-    tags: ["Next.js", "PostgreSQL", "Docker", "MongoDB"],
+    tags: ["Next.js", "PostgreSQL", "MongoDB"],
   },
   {
-    year: "2024",
+    year: "2024-2025",
     title: "Shipped Production Products",
     desc: "Led development of production-grade SaaS applications. Focused on performance, scalability, CI/CD pipelines, and engineering best practices.",
     icon: Rocket,
     color: "blue",
-    tags: ["SaaS", "CI/CD", "Vercel", "AWS"],
+    tags: [ "Render", "Vercel", "AWS"],
   },
   {
     year: "2025+",
@@ -50,18 +50,18 @@ const timeline = [
     desc: "Exploring AI-powered applications, distributed systems, and open-source contributions. Aiming to work on products that impact millions of users.",
     icon: Target,
     color: "purple",
-    tags: ["AI/ML", "Open Source", "Distributed Systems"],
+    tags: [ "Open Source", "Distributed Systems"],
     isCurrent: true,
   },
 ];
 
 const colorMap: Record<string, { dot: string; line: string; badge: string; icon: string; year: string }> = {
   cyan: {
-    dot: "bg-accent-cyan border-accent-cyan/40 shadow-[0_0_15px_rgba(0,212,255,0.4)]",
-    line: "bg-accent-cyan/30",
-    badge: "bg-accent-cyan/10 text-accent-cyan border-accent-cyan/25",
-    icon: "bg-accent-cyan/10 text-accent-cyan",
-    year: "text-accent-cyan",
+    dot: "bg-cyan border-cyan-400/40 shadow-[0_0_15px_rgba(0,212,255,0.4)]",
+    line: "bg-cyan-400/30",
+    badge: "bg-cyan-500/10 text-cyan-400 border-cyan-500/25",
+    icon: "bg-cyan-500/10 text-cyan-400",
+    year: "text-cyan-400",
   },
   blue: {
     dot: "bg-blue-400 border-blue-400/40 shadow-[0_0_15px_rgba(96,165,250,0.4)]",
@@ -71,11 +71,11 @@ const colorMap: Record<string, { dot: string; line: string; badge: string; icon:
     year: "text-blue-400",
   },
   purple: {
-    dot: "bg-accent-purple border-accent-purple/40 shadow-[0_0_15px_rgba(139,92,246,0.4)]",
-    line: "bg-accent-purple/30",
-    badge: "bg-accent-purple/10 text-accent-purple border-accent-purple/25",
-    icon: "bg-accent-purple/10 text-accent-purple",
-    year: "text-accent-purple",
+    dot: "bg-purple-400 border-purple-400/40 shadow-[0_0_15px_rgba(139,92,246,0.4)]",
+    line: "bg-purple-400/30",
+    badge: "bg-purple-500/10 text-purple-400 border-purple-500/25",
+    icon: "bg-purple-500/10 text-purple-400",
+    year: "text-purple-400",
   },
 };
 
@@ -105,7 +105,7 @@ export default function Experience() {
         </motion.div>
 
         <div className="relative">
-          {/* Vertical line */}
+         
           <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-border to-transparent md:-translate-x-px" />
 
           <div className="space-y-12">
@@ -121,10 +121,10 @@ export default function Experience() {
                   transition={{ duration: 0.55, delay: i * 0.1 }}
                   className={`relative flex items-start gap-6 md:gap-0 ${isRight ? "md:flex-row" : "md:flex-row-reverse"}`}
                 >
-                  {/* Content */}
+                 
                   <div className={`flex-1 pl-14 md:pl-0 ${isRight ? "md:pr-14 md:text-right" : "md:pl-14"}`}>
-                    <div className={`glass glass-hover card-shine border border-border rounded-2xl p-6 ${item.isCurrent ? "border-accent-cyan/30" : ""}`}>
-                      {/* Header */}
+                    <div className={`glass glass-hover card-shine border border-border rounded-2xl p-6 ${item.isCurrent ? "border-cyan600/30" : ""}`}>
+                     
                       <div className={`flex items-center gap-3 mb-3 ${isRight ? "md:flex-row-reverse md:justify-start" : ""}`}>
                         <div className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 ${c.icon}`}>
                           <item.icon size={16} />
@@ -134,8 +134,8 @@ export default function Experience() {
                           <h3 className="font-display font-600 text-text-primary leading-tight">{item.title}</h3>
                         </div>
                         {item.isCurrent && (
-                          <span className="ml-auto flex items-center gap-1.5 px-2 py-1 rounded-full bg-accent-cyan/10 border border-accent-cyan/20 text-accent-cyan text-xs">
-                            <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan animate-pulse" />
+                          <span className="ml-auto flex items-center gap-1.5 px-2 py-1 rounded-full bg-cyan500/10 border border-cyan400/20 text-cyan-500 text-xs">
+                            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
                             Now
                           </span>
                         )}
@@ -153,12 +153,12 @@ export default function Experience() {
                     </div>
                   </div>
 
-                  {/* Center dot */}
+                  
                   <div className="absolute left-4 md:left-1/2 md:-translate-x-1/2 top-6 w-4 h-4 rounded-full border-2 flex-shrink-0 z-10 flex items-center justify-center">
                     <div className={`w-4 h-4 rounded-full border-2 border-bg-primary ${c.dot}`} />
                   </div>
 
-                  {/* Spacer for opposite side on desktop */}
+                 
                   <div className="hidden md:block flex-1" />
                 </motion.div>
               );

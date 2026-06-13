@@ -55,17 +55,17 @@ const categories = [
 
 const colorMap: Record<string, { bg: string; border: string; text: string; bar: string; glow: string }> = {
   cyan: {
-    bg: "bg-accent-cyan/8",
-    border: "border-accent-cyan/25",
-    text: "text-accent-cyan",
-    bar: "bg-gradient-to-r from-accent-cyan to-blue-400",
+    bg: "bg-cyan-500/8",
+    border: "border-cyan-500/25",
+    text: "text-cyan-400",
+    bar: "bg-gradient-to-r from-cyan-400 to-blue-400",
     glow: "shadow-[0_0_20px_rgba(0,212,255,0.15)]",
   },
   purple: {
-    bg: "bg-accent-purple/8",
-    border: "border-accent-purple/25",
-    text: "text-accent-purple",
-    bar: "bg-gradient-to-r from-accent-purple to-pink-500",
+    bg: "bg-purple-500/8",
+    border: "border-purple-500/25",
+    text: "text-purple-400",
+    bar: "bg-gradient-to-r from-purple-400 to-pink-500",
     glow: "shadow-[0_0_20px_rgba(139,92,246,0.15)]",
   },
   blue: {

@@ -1,18 +1,21 @@
 "use client";
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { GitBranch, Link2, Mail, MapPin, Send, X } from "lucide-react";
+import { Mail, MapPin, Send } from "lucide-react";
+import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import { FiMapPin} from "react-icons/fi";
+import { BsSend} from "react-icons/bs";
 
 const socialLinks = [
-  { icon: Mail, label: "Email", value: "reno@developer.com", href: "mailto:reno@developer.com", color: "cyan" },
-  { icon: GitBranch, label: "GitHub", value: "github.com/reno-dev", href: "https://github.com", color: "purple" },
-  { icon: Link2, label: "LinkedIn", value: "linkedin.com/in/reno", href: "https://linkedin.com", color: "blue" },
-  { icon: X, label: "X / X", value: "@reno_builds", href: "https://twitter.com", color: "orange" },
+  { icon: Mail, label: "Email", value: "josiahyisa4reals@gmail.com", href: "mailto:josiahyisa4reals@gmail.com", color: "cyan" },
+  { icon: FaGithub, label: "GitHub", value: "https://github.com/Gifted12", href: "https://github.com/Gifted12", color: "purple" },
+  { icon:FaLinkedin, label: "LinkedIn", value: "@yisa-josiah", href: "https://www.linkedin.com/in/yisa-josiah-609859241", color: "blue" },
+  { icon:FaXTwitter, label: "X / X", value: "@RenoGifted", href: "https://x.com/RenoGifted?t=Hsj46ostyJc3sE7eX3RQRw&s=08", color: "orange" },
 ];
 
 const colorConfig: Record<string, { icon: string; hover: string }> = {
-  cyan: { icon: "bg-accent-cyan/10 text-accent-cyan", hover: "hover:border-accent-cyan/40 hover:bg-accent-cyan/5" },
-  purple: { icon: "bg-accent-purple/10 text-accent-purple", hover: "hover:border-accent-purple/40 hover:bg-accent-purple/5" },
+  cyan: { icon: "bg-cyan-500/10 text-cyan", hover: "hover:border-cyan-400-500/40 hover:bg-cyan-500/5" },
+  purple: { icon: "bg-purple-500/10 text-purple", hover: "hover:border-purple-400-500/40 hover:bg-purple-500/5" },
   blue: { icon: "bg-blue-500/10 text-blue-400", hover: "hover:border-blue-400/40 hover:bg-blue-500/5" },
   orange: { icon: "bg-orange-500/10 text-orange-400", hover: "hover:border-orange-400/40 hover:bg-orange-500/5" },
 };
@@ -33,7 +36,7 @@ export default function Contact() {
   return (
     <section id="contact" className="relative py-20 overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-25" />
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-accent-cyan/5 blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-cyan-500/5 blur-[100px] rounded-full pointer-events-none" />
 
       <div ref={ref} className="relative z-10 max-w-7xl mx-auto px-6">
         <motion.div
@@ -53,29 +56,29 @@ export default function Contact() {
         </motion.div>
 
         <div className="grid lg:grid-cols-5 gap-8">
-          {/* Left: Social + Info */}
+        
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="lg:col-span-2 space-y-5"
           >
-            {/* Availability card */}
-            <div className="glass border border-accent-cyan/20 rounded-2xl p-6">
+     
+            <div className="glass border border-cyan-400/20 rounded-2xl p-6">
               <div className="flex items-center gap-2 mb-3">
-                <span className="w-2 h-2 rounded-full bg-accent-cyan animate-pulse" />
-                <span className="text-accent-cyan text-sm font-medium">Open to Opportunities</span>
+                <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
+                <span className="text-cyan-400 text-sm font-medium">Open to Opportunities</span>
               </div>
               <p className="text-text-secondary text-sm leading-relaxed">
                 Currently available for freelance projects, full-time positions, and technical consulting.
               </p>
               <div className="flex items-center gap-2 mt-4 text-text-muted text-xs">
-                <MapPin size={12} />
+                <FiMapPin size={12} />
                 <span>Remote • Worldwide</span>
               </div>
             </div>
 
-            {/* Social links */}
+           
             {socialLinks.map((social, i) => {
               const c = colorConfig[social.color];
               return (
@@ -101,7 +104,7 @@ export default function Contact() {
             })}
           </motion.div>
 
-          {/* Right: Form */}
+         
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -121,7 +124,7 @@ export default function Contact() {
                       onChange={(e) => setFormState((s) => ({ ...s, name: e.target.value }))}
                       placeholder="Your name"
                       required
-                      className="w-full bg-bg-elevated border border-border rounded-xl px-4 py-3 text-sm text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-cyan/50 focus:bg-bg-elevated transition-all duration-200"
+                      className="w-full bg-bg-elevated border border-border rounded-xl px-4 py-3 text-sm text-text-primary placeholder-text-muted focus:outline-none focus:border-c/50 f-500ocus:bg-bg-elevated transition-all duration-200"
                     />
                   </div>
                   <div>
@@ -132,7 +135,7 @@ export default function Contact() {
                       onChange={(e) => setFormState((s) => ({ ...s, email: e.target.value }))}
                       placeholder="your@email.com"
                       required
-                      className="w-full bg-bg-elevated border border-border rounded-xl px-4 py-3 text-sm text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-cyan/50 transition-all duration-200"
+                      className="w-full bg-bg-elevated border border-border rounded-xl px-4 py-3 text-sm text-text-primary placeholder-text-muted focus:outline-none focus:border-c/50 t-500ransition-all duration-200"
                     />
                   </div>
                 </div>
@@ -145,7 +148,7 @@ export default function Contact() {
                     onChange={(e) => setFormState((s) => ({ ...s, subject: e.target.value }))}
                     placeholder="What's this about?"
                     required
-                    className="w-full bg-bg-elevated border border-border rounded-xl px-4 py-3 text-sm text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-cyan/50 transition-all duration-200"
+                    className="w-full bg-bg-elevated border border-border rounded-xl px-4 py-3 text-sm text-text-primary placeholder-text-muted focus:outline-none focus:border-cyan-500/50 transition-all duration-200"
                   />
                 </div>
 
@@ -157,7 +160,7 @@ export default function Contact() {
                     placeholder="Tell me about your project or opportunity..."
                     required
                     rows={5}
-                    className="w-full bg-bg-elevated border border-border rounded-xl px-4 py-3 text-sm text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-cyan/50 transition-all duration-200 resize-none"
+                    className="w-full bg-bg-elevated border border-border rounded-xl px-4 py-3 text-sm text-text-primary placeholder-text-muted focus:outline-none focus:border-cyan-500/50 transition-all duration-200 resize-none"
                   />
                 </div>
 
@@ -172,7 +175,7 @@ export default function Contact() {
                     </>
                   ) : (
                     <>
-                      <Send size={14} />
+                      <BsSend size={14} />
                       Send Message
                     </>
                   )}

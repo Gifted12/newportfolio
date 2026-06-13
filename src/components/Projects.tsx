@@ -1,17 +1,19 @@
 "use client";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { FaGithub} from "react-icons/fa6";
+import { FaGithub,FaArrowUpRightFromSquare} from "react-icons/fa6";
+import Image from "next/image"
 
 const projects = [
   {
     title: "ClipSync",
     description: "A full-stack platform that help users pass datas from one device to the othee, built with an optimistic UI.",
     tech: ["React", "MongoDB", "Google Auth", "Css"],
+    img: "/clipsyncc.vercel.app_login.png",
     category: "Full-Stack",
     color: "cyan",
-    live: "#",
-    github: "#",
+    live: "https://clipsyncc.vercel.app",
+    github: "https://github.com/Gifted12/ClipSync_Extention",
     gradient: "from-cyan-500/20 via-blue-500/10 to-transparent",
     mockupBg: "#0a1628",
     mockupLines: ["#00d4ff", "#3b82f6", "#8b5cf6"],
@@ -20,21 +22,23 @@ const projects = [
     title: "Event Tracker",
     description: "An Event management tool used to track activities on a daily, weekly, and montly bases.",
     tech: ["React", "FireBase", "Css"],
+    img: "/2.png",
     category: "Full-Stack",
     color: "purple",
-    live: "#",
-    github: "#",
+    live: "https://eventtracker-bay.vercel.app",
+    github: "https://github.com/Gifted12/eventtracker",
     gradient: "from-purple-500/20 via-pink-500/10 to-transparent",
     mockupBg: "#0e0a1a",
     mockupLines: ["#8b5cf6", "#ec4899", "#6366f1"],
   },
   {
-    title: "Travel Agent",
-    description: "A travel agent site that torist or travelers can get insperation from to explore the world",
-    tech: ["Node.js", "Javascript", "nodemailer", "Css"],
-    category: "Fullstack",
+    title: "Book Mark",
+    description: "A frontend mentors challenge ",
+    tech: ["HTML", "Javascript", "Css"],
+    img: "/pro.png",
+    category: "FrontEnd",
     color: "blue",
-    live: "#",
+    live: "https://book-11-mark.netlify.app",
     github: "#",
     gradient: "from-blue-500/20 via-cyan-500/10 to-transparent",
     mockupBg: "#0a0f20",
@@ -44,10 +48,11 @@ const projects = [
     title: "Portfolio",
     description: "my personal portfolio ",
     tech: ["Next Js", "TypeScript", "Tailwind"],
-    category: "Open Source",
+    img: "/portfolioimg.jpg",
+    category: "Full-Stack",
     color: "orange",
-    live: "#",
-    github: "#",
+    live: "https://josiahyisa.vercel.app",
+    github: "https://github.com/Gifted12/newportfolio",
     gradient: "from-orange-500/20 via-amber-500/10 to-transparent",
     mockupBg: "#1a0e06",
     mockupLines: ["#f97316", "#eab308", "#f59e0b"],
@@ -55,12 +60,11 @@ const projects = [
 ];
 
 const colorConfig: Record<string, { badge: string; btn: string; border: string;  }> = {
-  cyan: { badge: "bg-accent-cyan/10 text-accent-cyan border-accent-cyan/20", btn: "text-accent-cyan hover:bg-accent-cyan/10", border: "hover:border-accent-cyan/40"},
-  purple: { badge: "bg-accent-purple/10 text-accent-purple border-accent-purple/20", btn: "text-accent-purple hover:bg-accent-purple/10", border: "hover:border-accent-purple/40" },
+  cyan: { badge: "bg-cyan-500/10 text-cyan-400 border-cyan-500/20", btn: "text-cyan-400 hover:bg-cyan-500/10", border: "hover:borde-cyan-400/40"},
+  purple: { badge: "bg-purple-500/10 text-purple-400 border-purple-500/20", btn: "text-purple-400 hover:bg-purple-500/10", border: "hover:border-purple-400/40" },
   blue: { badge: "bg-blue-500/10 text-blue-400 border-blue-500/20", btn: "text-blue-400 hover:bg-blue-500/10", border: "hover:border-blue-400/40" },
   orange: { badge: "bg-orange-500/10 text-orange-400 border-orange-500/20", btn: "text-orange-400 hover:bg-orange-500/10", border: "hover:border-orange-400/40" },
 };
-
 
 const BAR_WIDTHS = [62, 48, 55, 38, 45];
 
@@ -73,29 +77,21 @@ function MockupScreen({ project }: { project: typeof projects[0] }) {
           <span key={i} className={`w-2 h-2 rounded-full ${c}`} />
         ))}
         <div className="ml-2 flex-1 h-4 rounded bg-white/5 flex items-center px-2">
-          <span className="text-[8px] font-mono text-white/30 truncate">https://{project.title.toLowerCase().replace(" ", "")}.vercel.app</span>
+          <span className="text-[8px] font-mono text-white/30 truncate">{project.live}</span>
         </div>
       </div>
   
-      <div className="p-4 h-40 relative overflow-hidden">
-        <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient}`} />
-        <div className="relative space-y-2">
-         
-          <div className="flex gap-2 mb-3">
-            {project.mockupLines.map((color, i) => (
-              <div key={i} className="h-1.5 rounded-full flex-1 opacity-50" style={{ background: color }} />
-            ))}
-          </div>
-          {[85, 65, 75, 55, 70].map((w, i) => (
-            <div key={i} className="h-2 rounded" style={{ width: `${w}%`, background: `${project.mockupLines[i % 3]}22` }}>
-              <div className="h-full rounded" style={{ width: `${BAR_WIDTHS[i]}%`, background: project.mockupLines[i % 3], opacity: 0.6 }} />
-            </div>
-          ))}
-          <div className="mt-3 flex gap-2">
-            {[0, 1].map(i => (
-              <div key={i} className="h-6 w-16 rounded" style={{ background: project.mockupLines[i] + "33", border: `1px solid ${project.mockupLines[i]}44` }} />
-            ))}
-          </div>
+      <div className="p-0 h-40 overflow-hidden  flex align-middle justify-center" >
+        <div className="  align-middle">
+          
+            <Image
+            src={project.img}
+            
+            alt="projectsimg"
+            width={600}
+            height={200}
+            priority
+            />            
         </div>
       </div>
     </div>
@@ -108,7 +104,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="relative py-20 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-bg-secondary/30 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-b from-transparent via-bg-secondary/30 to-transparent" />
 
       <div ref={ref} className="relative z-10 max-w-7xl mx-auto px-6">
         <motion.div
@@ -174,7 +170,7 @@ export default function Projects() {
                       href={project.live}
                       className={`inline-flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-xl transition-all duration-200 border border-transparent ${c.btn}`}
                     >
-                      {/* <FaExternalLink size={13} /> */}
+                      <FaArrowUpRightFromSquare size={13} />
                       Live Demo
                     </a>
                     <a
@@ -198,7 +194,7 @@ export default function Projects() {
           className="text-center mt-12"
         >
           <a
-            href="https://github.com"
+            href="https://github.com/Gifted12"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-outline px-8 py-3.5 rounded-2xl text-sm inline-flex items-center gap-2"

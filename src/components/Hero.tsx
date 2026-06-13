@@ -1,7 +1,7 @@
 "use client";
 import { motion, type Variants } from "framer-motion";
 import Image from "next/image";
-import { FaGithub, FaLinkedin, FaXTwitter, FaArrowDown } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaXTwitter, FaArrowDown, FaDownload } from "react-icons/fa6";
 
 const stagger: Variants = {
   animate: { transition: { staggerChildren: 0.12 } },
@@ -21,26 +21,26 @@ export default function Hero() {
       <div className="absolute inset-0 grid-bg opacity-60" />
 
  
-      <div className="absolute inset-0 bg-gradient-radial from-accent-cyan/8 via-transparent to-transparent" style={{ backgroundPosition: "60% 40%", backgroundSize: "80% 60%" }} />
+      <div className="absolute inset-0 bg-gradient-radial from-cyan-500/8 via-transparent to-transparent" style={{ backgroundPosition: "60% 40%", backgroundSize: "80% 60%" }} />
 
    
       <motion.div
         animate={{ scale: [1, 1.2, 1], opacity: [0.15, 0.25, 0.15] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-accent-cyan/10 blur-[120px] pointer-events-none"
+        className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-cyan-500/10 blur-[120px] pointer-events-none"
       />
       <motion.div
         animate={{ scale: [1.2, 1, 1.2], opacity: [0.1, 0.2, 0.1] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-        className="absolute bottom-1/3 left-1/4 w-80 h-80 rounded-full bg-accent-purple/10 blur-[100px] pointer-events-none"
+        className="absolute bottom-1/3 left-1/4 w-80 h-80 rounded-full bg-purple-500/10 blur-[100px] pointer-events-none"
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center py-20">
       
         <motion.div variants={stagger} initial="initial" animate="animate" className="order-2 lg:order-1">
         
-          <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-accent-cyan/20 mb-8">
-            <span className="w-2 h-2 rounded-full bg-accent-cyan animate-pulse" />
+          <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-cyan-400/20 mb-8">
+            <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
             <span className="section-label text-l">Available for opportunities</span>
           </motion.div>
 
@@ -51,7 +51,7 @@ export default function Hero() {
           >
             Hi, I&apos;m{" "}
             <span className="gradient-text glow-text">Josiah</span>
-            <span className="text-accent-cyan">.</span>
+            <span className="text-cyan-500">.</span>
           </motion.h1>
 
        
@@ -69,7 +69,7 @@ export default function Hero() {
             variants={fadeUp}
             className="text-text-secondary leading-relaxed mb-10 max-w-md text-base"
           >
-            I craft end-to-end digital experiences — from pixel-perfect interfaces to robust server architectures. Passionate about clean code, modern tooling, and shipping products people love.
+            I craft end-to-end digital experiences from pixel-perfect interfaces to robust server architectures. Passionate about clean code, modern tooling, and shipping products people love.
           </motion.p>
 
    
@@ -85,7 +85,7 @@ export default function Hero() {
               href="#"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-2xl text-sm font-medium text-text-secondary glass border border-border hover:border-border-glow hover:text-text-primary transition-all duration-300"
             >
-              <FaArrowDown size={15} />
+              <FaDownload size={15} />
               Resume
             </a>
           </motion.div>
@@ -124,13 +124,12 @@ export default function Hero() {
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="absolute inset-0 rounded-full border border-dashed border-accent-cyan/20"
+              className="absolute inset-0 rounded-full border border-dashed border-cyan-400/20"
             />
             <motion.div
               animate={{ rotate: -360 }}
               transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-              className="absolute inset-6 rounded-full border border-dashed border-accent-purple/15"
-            />
+              className="absolute inset-6 rounded-full border border-dashed border-purple-300/15"           />
 
             
             {[
@@ -154,7 +153,7 @@ export default function Hero() {
             <motion.div
               animate={{ y: [-8, 8, -8] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute inset-12 rounded-full overflow-hidden bg-gradient-to-br from-bg-card to-bg-elevated border-2 border-accent-cyan/30 shadow-glow flex items-center justify-center"
+              className="absolute inset-12 rounded-full overflow-hidden bg-gradient-to-br from-bg-card to-bg-elevated border-2 border-cyan-500/30 shadow-glow flex items-center justify-center"
             >
              <Image
              src="/d581528ab01b454e976be817b030b14b.jpg"
@@ -167,7 +166,7 @@ export default function Hero() {
             </motion.div>
 
           
-            <div className="absolute inset-12 rounded-full blur-2xl bg-accent-cyan/15 -z-10" />
+            <div className="absolute inset-12 rounded-full blur-2xl bg-cyan-500/15 -z-10" />
           </div>
         </motion.div>
       </div>

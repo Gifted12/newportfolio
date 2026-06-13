@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image"
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -44,15 +45,18 @@ export default function Navbar() {
             : "py-6 bg-transparent"
         }`}
       >
-        <nav className="max-w-10xl mx-auto px-6 flex items-center justify-around ">
+        <nav className="max-w-10xl mx-auto px-6 flex items-center justify-between ">
         
           <a
             href="#"
             className="font-display font-800 text-xl tracking-tight group"
           >
-            <span className="gradient-text text-4xl">Reno</span>
-            <span className="text-text-secondary">.</span>
-            <span className="text-accent-cyan ml-0.5 opacity-0 group-hover:opacity-100 transition-opacity">_</span>
+            <Image
+              src= "/favicon.png"
+              alt="logo"
+              width ={45}
+              height={45}
+            />
           </a>
 
           
@@ -111,9 +115,9 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.25 }}
-            className="fixed top-16 left-4 right-4 z-40 glass rounded-2xl border border-border p-6 md:hidden"
+            className="fixed top-4 left-4 right-4 z-40 bg-[#0c1222b8]  glass rounded-b-xl  p-6 md:hidden"
           >
-            <ul className="flex flex-col gap-1">
+            <ul className="flex flex-col gap-1 pt-20">
               {navLinks.map((link) => (
                 <li key={link.label}>
                   <a
@@ -121,7 +125,7 @@ export default function Navbar() {
                     onClick={() => setMenuOpen(false)}
                     className={`block px-4 py-3 rounded-full text-sm font-medium transition-all ${
                       activeSection === link.href.slice(1)
-                        ? "text-accent-cyan bg-accent-cyan/8 border border-accent-cyan/20"
+                        ? "text-cyan-500 bg-cyan-500/8 border border-cyan-500/20"
                         : "text-text-secondary hover:text-text-primary hover:bg-bg-elevated"
                     }`}
                   >
@@ -130,7 +134,7 @@ export default function Navbar() {
                 </li>
               ))}
               <li className="pt-2 border-t border-border mt-2">
-                <a href="mailto:reno@developer.com" className="btn-outline block text-center px-4 py-3 rounded-xl text-sm">
+                <a href="josiahyisa4reals@gmail.com" className="btn-outline block text-center px-4 py-3 rounded-xl text-sm">
                   Hire Me
                 </a>
               </li>
