@@ -52,7 +52,7 @@ export default function Navbar() {
             className="font-display font-800 text-xl tracking-tight group"
           >
             <Image
-              src= "/favicon.png"
+              src= "/icon.png"
               alt="logo"
               width ={45}
               height={45}
