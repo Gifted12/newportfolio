@@ -82,7 +82,7 @@ export default function Hero() {
               Contact Me
             </a>
             <a
-              href="#"
+              href="https://drive.google.com/file/d/1_1u_PiWlvr_sen40EtAOTrFmN-BBs69w/view?usp=drivesdk"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-2xl text-sm font-medium text-text-secondary glass border border-border hover:border-border-glow hover:text-text-primary transition-all duration-300"
             >
               <FaDownload size={15} />
